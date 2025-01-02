@@ -1,0 +1,142 @@
+{
+    "users": {
+        "type": "array",
+        "size": 100,
+        "properties": {
+            "id": {
+                "type": "string",
+                "faker": "random.uuid"
+            },
+            "name": {
+                "type": "string",
+                "faker": "name.findName"
+            },
+            "avatar": {
+                "type": "string",
+                "faker": "image.avatar"
+            },
+            "email": {
+                "type": "string",
+                "faker": "internet.email"
+            },
+            "address": {
+                "type": "object",
+                "properties": {
+                    "street": {
+                        "type": "string",
+                        "faker": "address.streetAddress"
+                    },
+                    "city": {
+                        "type": "string",
+                        "faker": "address.city"
+                    },
+                    "state": {
+                        "type": "string",
+                        "faker": "address.state"
+                    },
+                    "zipCode": {
+                        "type": "string",
+                        "faker": "address.zipCode"
+                    }
+                },
+                "required": [
+                    "street",
+                    "city",
+                    "state",
+                    "zipCode"
+                ]
+            },
+            "phone": {
+                "type": "string",
+                "faker": "phone.phoneNumber"
+            },
+            "website": {
+                "type": "string",
+                "faker": "internet.url"
+            },
+            "company": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "faker": "company.companyName"
+                    },
+                    "catchPhrase": {
+                        "type": "string",
+                        "faker": "company.catchPhrase"
+                    },
+                    "bs": {
+                        "type": "string",
+                        "faker": "company.bs"
+                    }
+                },
+                "required": [
+                    "name",
+                    "catchPhrase",
+                    "bs"
+                ]
+            }
+        },
+        "required": [
+            "id",
+            "name",
+            "email",
+            "address",
+            "phone",
+            "website",
+            "company"
+        ]
+    },
+    "sales": {
+        "type": "array",
+        "size": 100,
+        "properties": {
+            "id": {
+                "type": "string",
+                "faker": "random.uuid"
+            },
+            "user_id": {
+                "type": "string",
+                "faker": "random.uuid"
+            },
+            "product": {
+                "type": "string",
+                "faker": "commerce.productName"
+            },
+            "price": {
+                "type": "number",
+                "faker": "commerce.price"
+            },
+            "date": {
+                "type": "string",
+                "faker": "date.recent"
+            },
+            "quantity": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 10
+            },
+            "user": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "faker": "random.uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "faker": "name.findName"
+                    },
+                    "avatar": {
+                        "type": "string",
+                        "faker": "image.avatar"
+                    },
+                    "email": {
+                        "type": "string",
+                        "faker": "internet.email"
+                    }
+                }
+            }
+        }
+    }
+}
