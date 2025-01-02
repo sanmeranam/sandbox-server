@@ -42,5 +42,5 @@ function generateValue(properties) {
 }
 
 const data = generate(schema);
-fs.writeFileSync('api/db.json', JSON.stringify(data, null, 2));
+fs.writeFileSync('db.json', JSON.stringify(data, null, 2));
 console.log('Data generated successfully');

@@ -3,9 +3,14 @@ const jsonServer = require('json-server')
 
 const server = jsonServer.create()
 
+server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
+    res.header('Access-Control-Allow-Headers', '*')
+    next()
+});
 
 // Comment out to allow write operations
-const router = jsonServer.router('./api/db.json')
+const router = jsonServer.router('db.json')
 
 const middlewares = jsonServer.defaults()
 
